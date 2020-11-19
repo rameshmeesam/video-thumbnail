@@ -1,0 +1,18 @@
+.headerLeft {
+    color: var(--unnamed-color-041f41);
+    text-align: left;
+    font: normal normal normal 40px/48px Bogle;
+    letter-spacing: -1.2px;
+    color: #041F41;
+    opacity: 1;
+    top: 40px;
+    left: 139px;
+    width: 111px;
+    height: 56px;
+}
+
+.headerRight{
+    float: right;
+    margin-right: 10px;
+    margin-top: 18px;
+}
