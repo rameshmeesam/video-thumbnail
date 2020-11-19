@@ -16,3 +16,18 @@
     margin-right: 10px;
     margin-top: 18px;
 }
+
+.itemInfo {
+    color: var(--unnamed-color-041f41);
+    text-align: left;
+    font: normal normal normal 24px/30px Bogle;
+    letter-spacing: -0.72px;
+    color: #041F41;
+    opacity: 1;
+    max-width: 300px;
+    margin-bottom: 10px;
+}
+
+.videoInfo {
+    margin-top: 10px;
+}

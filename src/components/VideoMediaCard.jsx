@@ -8,13 +8,16 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles({
-  root: {
-    width:612
-  },
-});
 
-export default function VideoMediaCard() {
+
+export default function VideoMediaCard(props) {
+
+  const useStyles = makeStyles({
+    root: {
+      maxWidth: props.width
+    },
+  });
+
   const classes = useStyles();
 
   return (
@@ -23,8 +26,9 @@ export default function VideoMediaCard() {
         <CardMedia
           component="img"
           alt="Contemplative Reptile"
-          height="388"
-          image="/img/thumb1.png"
+          width= {props.width}
+          height= {props.height}
+          image={props.imgUrl}
           title="Contemplative Reptile"
         />
 
