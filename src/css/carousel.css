@@ -17,17 +17,35 @@
     margin-top: 18px;
 }
 
-.itemInfo {
-    color: var(--unnamed-color-041f41);
+.mainMediaTitleWrapper {
+    margin-bottom: 20px;
+    padding-left: 17px;
+}
+
+.mainMediaTitle {
     text-align: left;
     font: normal normal normal 24px/30px Bogle;
     letter-spacing: -0.72px;
     color: #041F41;
     opacity: 1;
     max-width: 300px;
-    margin-bottom: 10px;
 }
 
 .videoInfo {
-    margin-top: 10px;
+    width: 200px;
+    margin-left: 17px;
+    margin-top: 20px;
+}
+
+.subMediaTitle {
+    text-align: left;
+    font: normal normal normal 18px/24px Bogle;
+    letter-spacing: -0.54px;
+    color: #041F41;
+    opacity: 1;
+    max-width: 200px;
+}
+
+.headerWrapper{
+    widows: 100%;
 }

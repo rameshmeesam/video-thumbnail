@@ -7,6 +7,7 @@ import VideoMediaCard from "./VideoMediaCard";
 import CarouselHeader from "./carousel-header";
 import "../css/carousel.css";
 import Divider from "@material-ui/core/Divider";
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,25 +39,39 @@ export default function Carousel() {
           </Paper>
         </Grid>
         <Grid item xs={6}>
-          <div className="itemInfo">
-            Rohit Kaila on All Things Tech | #TechnologyOnTheMove
+          <div className="mainMediaTitleWrapper">
+            <div className="mainMediaTitle">
+              Rohit Kaila on All Things Tech | #TechnologyOnTheMove
+            </div>
+            <div>8 minutes</div>
           </div>
           <Divider variant="middle" />
-          <div className="videoInfo">
-            <span>
-              {" "}
-              <div className="itemInfo">
+          <Box display="flex" flexDirection="row" p={1} >
+            <Box p={1}>
+              <div className="subMediaTitle">
                 Episode 2 - #TechnologyOnTheMove | Ft. Lalitha Ramani
               </div>
               <div>
                 <VideoMediaCard
-                  width={200}
+                  width={310}
                   height={200}
                   imgUrl="/img/thumb-2.png"
                 />
               </div>
-            </span>
-          </div>
+            </Box>
+            <Box p={2}>
+              <div className="subMediaTitle">
+                Episode 2 - #TechnologyOnTheMove | Ft. Lalitha Ramani
+              </div>
+              <div>
+                <VideoMediaCard
+                  width={310}
+                  height={200}
+                  imgUrl="/img/thumb-2.png"
+                />
+              </div>
+            </Box>
+          </Box>
         </Grid>
       </Grid>
     </div>
