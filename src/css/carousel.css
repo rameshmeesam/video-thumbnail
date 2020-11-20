@@ -49,3 +49,21 @@
 .headerWrapper{
     widows: 100%;
 }
+
+.allVideosGrid {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+.allVideosGridRight {
+    padding-left: 22px;
+text-align: left;
+font: normal normal normal 24px/30px Bogle;
+letter-spacing: -0.72px;
+color: #041F41;
+opacity: 1;
+max-width: 332px !important;
+}
+
+.showAllButtonWrapper {
+    background-color:#F9F9F9;
+}

@@ -12,6 +12,7 @@ import Box from "@material-ui/core/Box";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    backgroundColor:"#F9F9F9"
   },
   paper: {
     padding: theme.spacing(0),
@@ -61,13 +62,13 @@ export default function Carousel() {
             </Box>
             <Box p={2}>
               <div className="subMediaTitle">
-                Episode 2 - #TechnologyOnTheMove | Ft. Lalitha Ramani
+                Episode 3 - #TechnologyOnTheMove | Ft. Lalitha Ramani
               </div>
               <div>
                 <VideoMediaCard
                   width={310}
                   height={200}
-                  imgUrl="/img/thumb-2.png"
+                  imgUrl="/img/thumb-3.png"
                 />
               </div>
             </Box>
