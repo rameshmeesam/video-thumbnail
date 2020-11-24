@@ -4,7 +4,7 @@ import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import CardMedia from "@material-ui/core/CardMedia";
 import VideoMediaCard from "./VideoMediaCard";
-import CarouselHeader from "./carousel-header";
+import CarouselHeader from "./header";
 import "../css/carousel.css";
 import Divider from "@material-ui/core/Divider";
 import Box from "@material-ui/core/Box";

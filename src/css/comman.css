@@ -2,3 +2,22 @@
 .MuiBox-root-12 {
     padding: 8px !important;
 }
+
+/*.Carousel-prev-14 {
+    left: 85% !important;
+}*/
+.myTest .Carousel-fullHeightHoverWrapper-8 {
+    top: 0 !important;
+    height: 21% !important;
+}
+
+.Carousel-prev-14 {
+    right: 30px !important;
+    left: auto !important;
+}
+
+.Carousel-root-3 {
+ width:100%;
+}
+
+

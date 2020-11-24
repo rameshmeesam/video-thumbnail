@@ -1,11 +1,12 @@
 import CarouselWrapper from "./containers/carousel-wrapper";
 import "./css/comman.css"
+import Container from '@material-ui/core/Container';
 
 function App() {
   return (
-    <div className="mainWrapper">
-   <CarouselWrapper />
-   </div>
+    <Container maxWidth="lg">
+    <CarouselWrapper />
+   </Container>
   );
 }
 
