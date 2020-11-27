@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
@@ -13,7 +13,7 @@ import Box from "@material-ui/core/Box";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor:"#F9F9F9"
+    backgroundColor: "#F9F9F9",
   },
   paper: {
     padding: theme.spacing(0),
@@ -22,26 +22,41 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const itemList = [
+  {
+    id: 1,
+    title: "Rohit Kaila on All Things Tech",
+    subTitle: "Episode 1 - #Rohit Kaila on All Things Tech",
+    url: "/img/thumb-1.png",
+  },
+  {
+    id: 2,
+    title: "TechnologyOnTheMoveh",
+    subTitle: "Episode 2 - #TechnologyOnTheMove | Ft. Lalitha Ramani",
+    url: "/img/thumb-2.png",
+  },
+  {
+    id: 3,
+    title: "Test title",
+    subTitle: "Episode 3 - #TechnologyOnTheMove | Ft. Lalitha Ramani",
+    url: "/img/thumb-3.png",
+  },
+  {
+    id: 4,
+    title: "Test title 2",
+    subTitle: "Episode 4 - #TechnologyOnTheMove | Ft. Lalitha Ramani",
+    url: "/img/thumb-1.png",
+  },
+];
 
 export default function Carousel() {
   const classes = useStyles();
-  const [list, setList] = useState([
-    {
-      id: 1,
-      title : "Rohit Kaila on All Things Tech",
-      subTitle: "Episode 2 - #Rohit Kaila on All Things Tech",
-      url: "/img/thumb-1.png"
-    },
-    {
-      id: 2,
-      title : "TechnologyOnTheMoveh",
-      subTitle: "Episode 3 - #TechnologyOnTheMove | Ft. Lalitha Ramani",
-      url: "/img/thumb-2.png"
-    }
-  ]);
+  const [list, setList] = useState(itemList);
+  const [mediaCount, setMediaCount] = useState(0);
 
-  const next= () => {
-    setList([
+  const next = () => {
+    if (mediaCount < 1) setMediaCount(mediaCount + 1);
+    /*setList([
       {
         id: 2,
         title : "TechnologyOnTheMoveh",
@@ -54,41 +69,27 @@ export default function Carousel() {
         subTitle: "Episode 4 - #TechnologyOnTheMove | Ft. Lalitha Ramani",
         url: "/img/thumb-2.png"
       }
-    ]);
+    ]);*/
     console.log("clicked next button");
-  }
-  
-  const prev= () => {
+  };
+
+  const prev = () => {
     console.log("clicked  prev");
-    setList([
-      {
-        id: 2,
-        title : "Rohit Kaila on All Things Tech",
-        subTitle: "Episode 2 - #Rohit Kaila on All Things Tech",
-        url: "/img/thumb-1.png"
-      },
-      {
-        id: 3,
-        title : "TechnologyOnTheMoveh",
-        subTitle: "Episode 3 - #TechnologyOnTheMove | Ft. Lalitha Ramani",
-        url: "/img/thumb-2.png"
-      },  
-      
-    ]);
-  }
+    if (mediaCount >= 1) setMediaCount(mediaCount - 1);
+  };
 
   return (
     <div className={classes.root}>
       <Grid container spacing={1}>
         <Grid item xs={12}>
-          <CarouselHeader title="Videos" onNext= {next} onPrev={prev} />
+          <CarouselHeader title="Videos" onNext={next} onPrev={prev} />
         </Grid>
         <Grid item xs={6}>
           <Paper className={classes.paper}>
             <VideoMediaCard
               width={612}
               height={388}
-              imgUrl={list[0].url}
+              imgUrl={list[mediaCount].url}
             />
           </Paper>
         </Grid>
@@ -100,21 +101,32 @@ export default function Carousel() {
             <div>8 minutes</div>
           </div>
           <Divider variant="middle" />
-          <Box display="flex" flexDirection="row" p={1} >
-          { list.map((item,index) => {
-             return (<Box p={index}>
+          <Box display="flex" flexDirection="row" p={1}>
+            <Box p={1}>
               <div className="subMediaTitle">
-                {item.subTitle}
+                {list[mediaCount+1].subTitle}
               </div>
               <div>
                 <ImageMediaCard
                   width={320}
                   height={200}
-                  imgUrl={item.url}
+                  imgUrl={list[mediaCount+1].url}
                 />
               </div>
-            </Box>);
-          })}
+            </Box>
+
+            <Box p={2}>
+              <div className="subMediaTitle">
+                {list[mediaCount+2].subTitle}
+              </div>
+              <div>
+                <ImageMediaCard
+                  width={320}
+                  height={200}
+                  imgUrl={list[mediaCount+2].url}
+                />
+              </div>
+            </Box>
           </Box>
         </Grid>
       </Grid>
