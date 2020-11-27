@@ -10,7 +10,7 @@ class CarouselHeader extends Component {
   }
 
   render() {
-    const { title } = this.props;
+    const { title, onNext,onPrev } = this.props;
     return (
       <div>
         <span className="headerLeft">{title}</span>
@@ -20,14 +20,14 @@ class CarouselHeader extends Component {
             aria-label="upload picture"
             component="span"
           >
-            <ArrowBackIosIcon onClick={() => {}} />
+            <ArrowBackIosIcon onClick={onPrev} />
           </IconButton>
           <IconButton
             color="primary"
             aria-label="upload picture"
             component="span"
           >
-            <ArrowForwardIosIcon onClick={() => {}} />
+            <ArrowForwardIosIcon onClick={onNext} />
           </IconButton>
         </span>
       </div>

@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import CardMedia from "@material-ui/core/CardMedia";
 import VideoMediaCard from "./VideoMediaCard";
+import ImageMediaCard from "./image-media-card";
 import CarouselHeader from "./carousel-header";
 import "../css/carousel.css";
 import Divider from "@material-ui/core/Divider";
@@ -21,21 +22,73 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 export default function Carousel() {
   const classes = useStyles();
+  const [list, setList] = useState([
+    {
+      id: 1,
+      title : "Rohit Kaila on All Things Tech",
+      subTitle: "Episode 2 - #Rohit Kaila on All Things Tech",
+      url: "/img/thumb-1.png"
+    },
+    {
+      id: 2,
+      title : "TechnologyOnTheMoveh",
+      subTitle: "Episode 3 - #TechnologyOnTheMove | Ft. Lalitha Ramani",
+      url: "/img/thumb-2.png"
+    }
+  ]);
+
+  const next= () => {
+    setList([
+      {
+        id: 2,
+        title : "TechnologyOnTheMoveh",
+        subTitle: "Episode 3 - #TechnologyOnTheMove | Ft. Lalitha Ramani",
+        url: "/img/thumb-2.png"
+      },  
+      {
+        id: 3,
+        title : "TechnologyOnTheMoveh",
+        subTitle: "Episode 4 - #TechnologyOnTheMove | Ft. Lalitha Ramani",
+        url: "/img/thumb-2.png"
+      }
+    ]);
+    console.log("clicked next button");
+  }
+  
+  const prev= () => {
+    console.log("clicked  prev");
+    setList([
+      {
+        id: 2,
+        title : "Rohit Kaila on All Things Tech",
+        subTitle: "Episode 2 - #Rohit Kaila on All Things Tech",
+        url: "/img/thumb-1.png"
+      },
+      {
+        id: 3,
+        title : "TechnologyOnTheMoveh",
+        subTitle: "Episode 3 - #TechnologyOnTheMove | Ft. Lalitha Ramani",
+        url: "/img/thumb-2.png"
+      },  
+      
+    ]);
+  }
 
   return (
     <div className={classes.root}>
       <Grid container spacing={1}>
         <Grid item xs={12}>
-          <CarouselHeader title="Videos" />
+          <CarouselHeader title="Videos" onNext= {next} onPrev={prev} />
         </Grid>
         <Grid item xs={6}>
           <Paper className={classes.paper}>
             <VideoMediaCard
               width={612}
               height={388}
-              imgUrl="/img/thumb-1.png"
+              imgUrl={list[0].url}
             />
           </Paper>
         </Grid>
@@ -48,30 +101,20 @@ export default function Carousel() {
           </div>
           <Divider variant="middle" />
           <Box display="flex" flexDirection="row" p={1} >
-            <Box p={1}>
+          { list.map((item,index) => {
+             return (<Box p={index}>
               <div className="subMediaTitle">
-                Episode 2 - #TechnologyOnTheMove | Ft. Lalitha Ramani
+                {item.subTitle}
               </div>
               <div>
-                <VideoMediaCard
-                  width={310}
+                <ImageMediaCard
+                  width={320}
                   height={200}
-                  imgUrl="/img/thumb-2.png"
+                  imgUrl={item.url}
                 />
               </div>
-            </Box>
-            <Box p={2}>
-              <div className="subMediaTitle">
-                Episode 3 - #TechnologyOnTheMove | Ft. Lalitha Ramani
-              </div>
-              <div>
-                <VideoMediaCard
-                  width={310}
-                  height={200}
-                  imgUrl="/img/thumb-3.png"
-                />
-              </div>
-            </Box>
+            </Box>);
+          })}
           </Box>
         </Grid>
       </Grid>
