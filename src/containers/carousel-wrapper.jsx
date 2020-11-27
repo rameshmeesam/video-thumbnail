@@ -24,7 +24,7 @@ export default function CarouselWrapper() {
   return (
     <div>
       <Grid container spacing={3}>
-        {/* header 
+        {/* header
         <Grid item xs={12} container spacing={3}>
         <Grid item xs={3}>
         <HeaderTitle title = "Videos"/>
@@ -35,7 +35,7 @@ export default function CarouselWrapper() {
         <Grid item xs={3}>
          <ArrowButtons />
         </Grid>
-        </Grid>*/}
+        </Grid>*/ }
         {/* carosel */}
         <Grid item xs={12} container spacing={3}>
         <SlideShow id="myTest"></SlideShow>
@@ -43,7 +43,7 @@ export default function CarouselWrapper() {
 
         {/* footer */}
         <Grid item xs={12}>
-          <Paper className={classes.paper}>footer</Paper>
+          <Paper className={classes.paper}></Paper>
         </Grid>
       </Grid>
     </div>
